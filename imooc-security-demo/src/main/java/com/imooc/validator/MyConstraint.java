@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.imooc.validate;
+package com.imooc.validator;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -15,15 +15,15 @@ import javax.validation.Payload;
  * @author zhailiang
  *
  */
-@Target({ ElementType.METHOD, ElementType.FIELD })
+@Target({ElementType.METHOD, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = MyConstraintValidator.class)
 public @interface MyConstraint {
+	
+	String message();
 
-	String message() default "xixi";
+	Class<?>[] groups() default { };
 
-	Class<?>[] groups() default {};
-
-	Class<? extends Payload>[] payload() default {};
+	Class<? extends Payload>[] payload() default { };
 
 }

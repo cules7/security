@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.imooc.validate;
+package com.imooc.validator;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -21,15 +21,14 @@ public class MyConstraintValidator implements ConstraintValidator<MyConstraint, 
 	
 	@Override
 	public void initialize(MyConstraint constraintAnnotation) {
-		// TODO Auto-generated method stub
-		System.out.println("init");
+		System.out.println("my validator init");
 	}
 
 	@Override
 	public boolean isValid(Object value, ConstraintValidatorContext context) {
 		helloService.greeting("tom");
 		System.out.println(value);
-		return true;
+		return false;
 	}
 
 }
